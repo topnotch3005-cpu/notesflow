@@ -8,7 +8,7 @@ function Header(){
 
     async function Logout(){
         try{
-            const response = await fetch(`http://localhost:9000/user/logout`,{
+            const response = await fetch(`${import.meta.env.VITE_API__URL}/user/logout`,{
             method: 'POST',
             headers:{
                 'content-type': 'application/json'

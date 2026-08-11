@@ -1,0 +1,693 @@
+:root{
+  --background1-color: hsl(0, 0%, 90%);
+  --background2-color: hsl(0, 0%, 80%);
+  --background3-color: hsl(0, 0%, 70%);
+  --color1: hsl(0, 0%, 10%);
+  --color2: hsl(0, 0%, 20%);
+  --color3: hsl(0, 0%, 30%);
+
+
+}
+
+
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--background1-color);
+
+  a{
+    text-decoration: none;
+  }
+
+  p{
+  margin: .1em .3em;
+  font-size: clamp(2.1rem, 2.4rem, 2.7rem);
+  color: var(--color1);
+  font-weight: 800;
+  transition: all .2s ease;
+  }
+  p:hover{
+    color: blue;
+    transform: scale(1.01);
+  }
+  
+  div{
+    padding: 1em 1em;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+
+    a{
+      font-size: clamp(1rem, 1.2rem, 1.5rem);
+      color: var(--color2);
+      transition: all .2s ease;
+      border-radius: 10px;
+      padding: 5px 10px;
+      background-color: var(--color3);
+      color: var(--background2-color);
+    }
+    a:hover{
+      transform: translateY(-2px);
+      background-color: var(--background2-color);
+      color: var(--color2);
+    }
+  }
+}
+.page{
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .content{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc, #f5f3ff);
+    }
+    
+}
+.loginPage{
+  width: min(440px, 80%);
+  background-color: var(--background1-color);
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5em;
+  transform: translateY(0) scale(1);
+  transition: all .3s ease;
+
+  .lockHeader{
+   background-color: rgba(0, 0, 255, 0.2);
+   border-radius: 50%;
+   padding: 10px 11px;
+   margin: 10px 0;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 1em;
+
+    .heading{
+      font-size: clamp(1.9rem, 2.2rem, 2.5rem);
+      align-self: center;
+      margin: 5px 0;
+      font-weight: 550;
+      color: var(--color1);
+    }
+
+    >div{
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+
+       div{
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background-color: white;
+        border: 2px solid var(--color3);
+        border-radius: 5px;
+
+        .eye{
+        position: absolute;
+        right: 5px;
+        transform: translateX(35px);
+        transition: all .2s ease;
+      
+      }
+        svg{
+        position: relative;
+        transform: translateX(0px);
+        transition: all .2s ease;
+        padding: 10px 5px;
+      
+      }
+  
+        input{
+        flex: 1;
+        font-size: clamp(1rem, 1.2rem, 1.5rem);
+        padding: 10px 5px;
+        border-radius: 10px;
+        color: var(--color2);
+        border: none;
+        outline: none;
+      }
+      input:focus ~ svg, input:not(:placeholder-shown) ~ svg{
+        transform: translateX(0);
+      }
+      }
+      div:has(input:focus){
+        box-shadow: 0 0 0 2px rgba(0, 55, 255, 0.4);
+        border-color: blue;
+      }
+      label{
+        padding: 0px 5px;
+        font-size: clamp(1rem, 1.2rem, 1.5rem);
+        color: var(--color2);
+      }
+      a{
+        align-self: flex-end;
+        color: rgb(111, 0, 255);
+      }
+    
+    }
+      button{
+        padding: 5px 5px;
+        font-size: clamp(1.5rem, 1.7rem, 2rem);
+        width: 100%;
+        align-self: center;
+        border-radius: 10px;
+        color: var(--background2-color);
+        background-color: hsl(240, 100%, 45%);
+        transition: all .2s ease;
+      }
+      button:hover{
+        transform: translateY(-2px);
+        background-color: hsl(240, 100%, 55%);
+      }
+  }
+  .footer{
+    font-size: clamp(1rem, 1.2rem, 1.5rem);
+    align-self: center;
+    font-weight: 500;
+    color: var(--color3);
+  }
+}
+.loginPage:hover{
+  box-shadow: 1px 1px 10px;
+}
+
+.signPage{
+ width: min(440px, 80%);
+  background-color: var(--background1-color);
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5em;
+  transform: translateY(0) scale(1);
+  transition: all .3s ease;
+
+  .lockHeader{
+   background-color: rgba(0, 0, 255, 0.2);
+   border-radius: 50%;
+   padding: 10px 11px;
+   margin: 10px 0;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 1em;
+
+    .heading{
+      font-size: clamp(1.9rem, 2.2rem, 2.5rem);
+      align-self: center;
+      margin: 5px 0;
+      font-weight: 550;
+      color: var(--color1);
+    }
+
+    >div{
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+
+       div{
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background-color: white;
+        border: 2px solid var(--color3);
+        border-radius: 5px;
+
+        .eye{
+        position: absolute;
+        right: 5px;
+        transform: translateX(35px);
+        transition: all .2s ease;
+      
+      }
+        svg{
+        position: relative;
+        transform: translateX(0px);
+        transition: all .2s ease;
+        padding: 10px 5px;
+      
+      }
+  
+        input{
+        flex: 1;
+        font-size: clamp(1rem, 1.2rem, 1.5rem);
+        padding: 10px 5px;
+        border-radius: 10px;
+        color: var(--color2);
+        border: none;
+        outline: none;
+      }
+      input:focus ~ svg, input:not(:placeholder-shown) ~ svg{
+        transform: translateX(0);
+      }
+      }
+      div:has(input:focus){
+        box-shadow: 0 0 0 2px rgba(0, 55, 255, 0.4);
+        border-color: blue;
+      }
+      label{
+        padding: 0px 5px;
+        font-size: clamp(1rem, 1.2rem, 1.5rem);
+        color: var(--color2);
+      }
+      a{
+        align-self: flex-end;
+        color: rgb(111, 0, 255);
+      }
+    
+    }
+      button{
+        padding: 5px 5px;
+        font-size: clamp(1.5rem, 1.7rem, 2rem);
+        width: 100%;
+        align-self: center;
+        border-radius: 10px;
+        color: var(--background2-color);
+        background-color: hsl(240, 100%, 45%);
+        transition: all .2s ease;
+      }
+      button:hover{
+        transform: translateY(-2px);
+        background-color: hsl(240, 100%, 55%);
+      }
+  }
+  .footer{
+        font-size: clamp(1rem, 1.2rem, 1.5rem);
+    align-self: center;
+    font-weight: 500;
+    color: var(--color3);
+}
+}
+.signPage:hover{
+ box-shadow: 1px 1px 10px;
+}
+@starting-style{
+  .loginPage{
+    transform: translateY(10px) scale(.95);
+  }
+    .signPage{
+    transform: translateY(10px) scale(.95);
+  }
+}
+.tags{
+    border-radius: 10px;
+    padding: 10px 5px;
+    background-color: hsl(0, 0%, 50%, 0.2);
+    margin: 5px 10px;
+}
+.addNotesPage{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 90%;
+
+    .title{
+        width: calc(100% - 10px);
+        border: none;
+        border-bottom: 1px solid black;
+        padding: 10px 5px;
+        font-size: clamp(2rem, 2.5rem, 3rem);
+    }
+    div{
+        display: flex;
+    }
+    .content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .tagBtn{
+      display: flex;
+      align-items: center;
+        border: 1px solid var(--color3);
+
+      >svg{
+      
+        padding: 11px 5px;
+        border-left: none;
+        cursor: pointer;
+      }
+      >svg:hover{
+        box-shadow: 0 0 5px ;
+      }
+      input{
+        outline: none;
+        border: none;
+        min-width: 10%;
+      }
+
+      div{
+        border-radius: 10px;
+        background-color: var(--background3-color);
+        padding: 5px 5px;
+        margin: 0px 5px;
+        display: flex;
+        align-items: center;
+        gap: .3em;
+        a{
+          letter-spacing: 1px;
+          margin: 10px 5px;
+        }
+
+
+        svg{
+          cursor: pointer;
+        }
+      }
+    }
+}
+.addNotesPage{
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  .notesHeading{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    div{
+      display: flex;
+      flex-direction: column;
+
+      p{
+        font-size: clamp(2rem, 2.3rem, 2.7rem);
+        margin: 0;
+      }
+    }
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+  .notesEditor{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5em;
+
+    >div{
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+
+      input{
+        flex: 1;
+        padding: 10px 5px;
+        font-size: clamp(1.1rem, 1.3rem, 1.5rem);
+      }
+    }
+  }
+  textarea{
+    width: 100%;
+    min-height: 280px;
+    font-size: clamp(1rem, 1.2rem, 1.4rem);
+    padding: 10px 5px;
+    line-height: 25px;
+    resize: vertical;
+  }
+  button{
+    align-self: flex-end;
+    font-size: clamp(1.1rem, 1.3rem, 1.5rem);
+    background-color: var(--color1);
+    color: var(--background2-color);
+    padding: 5px 10px;
+    border-radius: 5px
+  }
+}
+}
+.colorPick{
+  flex: 1;
+  display: flex;
+  gap: 1.5em;
+
+}
+.colorOption{
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+.colorSelected{
+  box-shadow: 0px 0px 10px;
+}
+
+.note{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100dvh;
+  gap: 1em;
+
+  .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    p{
+      font-size: clamp(2rem, 2.5rem, 3rem);
+      margin: 10px 0;
+      font-weight: 550;
+      display: flex;
+      align-items: center;
+      gap: .1em;
+    }
+
+  .menuBtn:hover ~ .menu, .menu:hover{
+    display: flex;    
+  }
+ 
+
+    .menu{
+     display: none;
+     flex-direction: column;
+     background-color: var(--background2-color);
+     gap: .5em;
+     padding: 10px 5px;
+     border-radius: 10px;
+     cursor: pointer;
+     position: absolute;
+     top: 14%;
+     right: 0;
+     z-index: 1;
+     transition: all .3s ease;
+
+     div{
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
+      
+     }
+     div:hover{
+      background-color: var(--background1-color);
+     }
+     a{
+      font-size: clamp(.9rem, 1.1rem, 1.3rem);
+      padding: 10px 5px;
+     }
+
+
+    }
+    
+  }
+  .notesContainer{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5em;
+      .nonote{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p{
+        font-size: clamp(2rem, 2.5rem, 3rem);
+        text-align: center;
+      }
+      button{
+        padding: 10px 10px;
+        background-color: blue;
+        color: white;
+         font-size: clamp(1rem, 1.2rem, 1.5rem);
+         border-radius: 10px;
+         cursor: pointer;
+         transition: all .3s ease;
+      }
+      button:hover{
+        background-color: hsl(240, 100%, 60%);
+        transform: translateY(-5px);
+        padding: 10px 15px;
+      }
+    }
+
+    .notesElement{
+      padding: 1em 1.5em;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+      transition-delay: .1s;
+      z-index: 0;
+      overflow: visible;
+      isolation: isolate;
+      transition: all .3s ease;
+      transform: translateY(0) scale(1);
+
+      &:hover{
+        z-index: 10;
+      }
+
+      .content{
+        max-height: 80px;
+        display: inline-block;
+        overflow: auto;
+        border-bottom: 1px solid var(--color2);
+        padding: 10px 0;
+        scrollbar-width: none;
+        color: var(--color2)
+      }
+      .tagDisplay{
+        display: flex;
+        justify-content: flex-start;
+        gap: .5em;
+
+        a{
+          background-color: var(--background1-color);
+          padding: 5px 15px;
+          border-radius: 15px;
+        }
+      }
+     
+ 
+
+      >div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5em 0;
+        position: relative;
+
+        p{
+          font-size: clamp(1.2rem, 1.5rem, 1.7rem);
+          margin: 0;
+        }
+        div{
+          display: flex;
+          gap: .2em;
+
+          svg{
+            cursor: pointer;
+            transition: all .2s ease;
+          }
+          svg:hover{
+            transform: scale(1.1);
+          }
+          .hiddenOption{
+            position: absolute;
+            top:11%;
+            right: 5%;
+            translate: 100% 0;
+            display: none;
+            background-color: hsl(0, 0%, 80%);
+            flex-direction: column;
+            padding: 10px 5px;
+            z-index: 3;
+            border-radius: 15px;
+            transition-delay: 1s;
+
+            a{
+              padding: 5px 5px;
+              border-radius: 10px;
+              cursor: pointer;
+            }
+            a:hover{
+              color: blueviolet;
+            }
+        
+          }
+          .hiddenOption:hover{
+            display: flex;
+          }
+          .hiddenMenu:hover  ~ .hiddenOption{
+            display: flex;
+             z-index: 3;
+          }
+        }
+      }
+    }
+    @starting-style{
+  .notesElement{
+    transform: translateY(20px) scale(.95);
+  }
+}
+  }
+}
+
+ .warning{
+        position: absolute;
+       z-index: 10;
+        width: min(400px, 70%);
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        background-color: var(--background1-color);
+        box-shadow: 0px 0px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1em 2em;
+        border-radius: 10px;
+        gap: 0;
+
+        div{
+            background-color: hsla(0, 100%, 50%, 0.5);
+            padding: 10px 10px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+          font-weight: 550;
+          margin: 15px 0;
+        }
+        span{
+          margin: 5px 0;
+        }
+        a{
+          background-color: var(--background2-color);
+          width: 100%;
+          text-align: center;
+          border: 1px solid red;
+          margin: 10px 0;
+          padding: 10px 5px;
+          border-radius: 10px;
+        }
+      }

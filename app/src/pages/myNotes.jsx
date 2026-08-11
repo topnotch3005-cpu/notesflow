@@ -25,7 +25,7 @@ function Notes(){
     async function handleSubmit(){
 
       try {
-        const response = await fetch(`http://localhost:9000/note/get`,{
+        const response = await fetch(`${import.meta.env.VITE_API__URL}/note/get`,{
             method: 'POST',
             headers:{
                 'authorization': `Bearer ${token}`,
@@ -53,7 +53,7 @@ function Notes(){
     async function deleteNote(id){
 
       try {
-        const response = await fetch(`http://localhost:9000/note/delete/${id}`,{
+        const response = await fetch(`${import.meta.env.VITE_API__URL}/note/delete/${id}`,{
             method: 'DELETE',
             headers:{
             'authorization': `Bearer ${token}`,
@@ -72,7 +72,7 @@ function Notes(){
     }
 
     async function refreshPage(){
-        const res = await fetch(`http://localhost:9000/note/refresh`,{
+        const res = await fetch(`${import.meta.env.VITE_API__URL}/note/refresh`,{
             method: 'POST',
             credentials: 'include'
            })
@@ -119,7 +119,7 @@ function updatestatus(e, id){
 
 async function update(status, id) {
   try {
-    const response = await fetch(`http://localhost:9000/note/updateStatus/${id}`, {
+    const response = await fetch(`${import.meta.env.VITE_API__URL}/note/updateStatus/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

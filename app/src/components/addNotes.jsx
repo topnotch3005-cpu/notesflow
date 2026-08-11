@@ -60,7 +60,7 @@ function AddNotes(){
           e.preventDefault();
     
           try {
-            const response = await fetch(`http://localhost:9000/note/add`,{
+            const response = await fetch(`${import.meta.env.VITE_API__URL}/note/add`,{
                 method: 'POST',
                 headers:{
                     'authorization': `Bearer ${token}`,

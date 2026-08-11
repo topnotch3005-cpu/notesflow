@@ -54,7 +54,7 @@ function EditNotes(){
           e.preventDefault();
     
           try {
-            const response = await fetch(`http://localhost:9000/note/update`,{
+            const response = await fetch(`${import.meta.env.VITE_API__URL}/note/update`,{
                 method: 'POST',
                 headers:{
                     'content-type': 'application/json'
@@ -87,7 +87,7 @@ function EditNotes(){
     useEffect(()=>{
         async function GetNote(){    
           try {
-            const response = await fetch(`http://localhost:9000/note/findOne/${editNoteId}`)
+            const response = await fetch(`${import.meta.env.VITE_API__URL}/note/findOne/${editNoteId}`)
 
             if(!response.ok){
                return console.log(`response is not okay`)

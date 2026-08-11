@@ -2,7 +2,7 @@
 const express = require("express")
 const dotenv = require("dotenv")
 dotenv.config()
-const PORT = 9000;
+const PORT = process.env.PORT || 9000;
 const cors = require('cors')
 const connectDB = require("./db/db")
 const userRouter = require("./routes/userRouter")
@@ -11,7 +11,7 @@ const cookieParser = require("cookie-parser");
 
 const app = express()
 app.use(cookieParser())
-app.use(cors({ origin: "http://localhost:5173",
+app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173",
     credentials: true}))
 app.use(express.json())
 connectDB();

@@ -22,7 +22,7 @@ function Sign(){
       e.preventDefault();
 
       try {
-        const response = await fetch(`http://localhost:9000/user/find`,{
+        const response = await fetch(`${import.meta.env.VITE_API__URL}/user/find`,{
             method: 'POST',
             headers:{
                 'content-type': 'application/json'

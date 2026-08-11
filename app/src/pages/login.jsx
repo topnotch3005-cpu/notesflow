@@ -18,7 +18,7 @@ function Login(){
           e.preventDefault();
     
           try {
-            const response = await fetch(`http://localhost:9000/user/add`,{
+            const response = await fetch(`${import.meta.env.VITE_API__URL}/user/add`,{
                 method: 'POST',
                 headers:{
                     'content-type': 'application/json'

@@ -59,8 +59,8 @@ router.post("/find", async (req, res) =>{
 
     res.cookie('refreshToken', refreshToken, {
         httpOnly: true,
-        secure: false,
-        sameSite: 'strict',
+        secure: true,
+        sameSite: 'none',
         path: "/note/refresh",
         maxAge: 7 * 24 * 60 * 1000,
     })

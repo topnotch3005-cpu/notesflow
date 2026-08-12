@@ -76,7 +76,13 @@ router.post("/find", async (req, res) =>{
 })
 
 router.post("/logout", (req,res) =>{
-    res.clearCookie('refreshToken', { path: '/note/refresh'});
+    res.clearCookie('refreshToken', {
+
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+        path: '/note/refresh'
+        });
 
     res.json({message: `logged out`})
 })

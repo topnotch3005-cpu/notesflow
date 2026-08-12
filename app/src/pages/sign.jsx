@@ -42,6 +42,9 @@ function Sign(){
         email:'',
         password: ''
         })
+         setClicked(true)
+            setTimeout(() => window.location.href = "/"
+                , 500)
         
       } catch (error) {
          console.log(error)
